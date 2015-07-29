@@ -307,7 +307,7 @@ $(function() {
     },
     
       // Current Group Model
-    var currentgroup = Parse.Object.extend("currentGroup.name");
+
 
     logIn: function(e) {
       var self = this;
