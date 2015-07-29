@@ -313,7 +313,7 @@ $(function() {
       var self = this;
       var username = this.$("#login-username").val();
       var password = this.$("#login-password").val();
-      var currentgroup = Parse.Object.extend("currentGroup");
+      var currentgroup = Parse.Object.extend("currentGroup.name");
       
       Parse.User.logIn(username, password, {
         success: function(user) {
