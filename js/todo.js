@@ -307,13 +307,13 @@ $(function() {
     },
     
       // Current Group Model
-  
+    var currentgroup = Parse.Object.extend("currentGroup");
 
     logIn: function(e) {
       var self = this;
       var username = this.$("#login-username").val();
       var password = this.$("#login-password").val();
-      var currentgroup = Parse.Object.extend("currentGroup");
+      
       
       Parse.User.logIn(username, password, {
         success: function(user) {
