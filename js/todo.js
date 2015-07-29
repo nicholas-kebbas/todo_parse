@@ -1,5 +1,4 @@
-// An example Parse.js Backbone application based on the todo app by
-// [Jérôme Gravel-Niquet](http://jgn.me/). This demo uses Parse to persist
+// This demo uses Parse to persist
 // the todo items and provide user authentication and sessions.
 
 $(function() {
@@ -8,6 +7,12 @@ $(function() {
 
   // Initialize Parse with your Parse application javascript keys
   Parse.initialize("6BTcw6XSmVmHfXh7BOFBsxD1yafzwkGNqeiqaldq", "MGAIOI8fdf4QP6pPuMIiv5cfhLwYqxIDsLCn83UJ");
+  
+  
+  // Current Group Model
+  
+  var currentuser = Parse.Object.extend("currentUser");
+  var currentgroup =  currentUser.get("currentGroup");
 
   // Todo Model
   // ----------
