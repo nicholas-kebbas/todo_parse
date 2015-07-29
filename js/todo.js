@@ -307,7 +307,7 @@ $(function() {
     },
     
     // Current Group Model
-    var currentgroup = currentGroup.get("name"); 
+   
 
     logIn: function(e) {
       var self = this;
