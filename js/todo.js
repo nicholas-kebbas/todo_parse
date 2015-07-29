@@ -9,10 +9,7 @@ $(function() {
   Parse.initialize("6BTcw6XSmVmHfXh7BOFBsxD1yafzwkGNqeiqaldq", "MGAIOI8fdf4QP6pPuMIiv5cfhLwYqxIDsLCn83UJ");
   
   
-  // Current Group Model
-  
-  var currentuser = Parse.Object.extend("currentUser");
-  var currentgroup =  currentUser.get("currentGroup");
+
 
   // Todo Model
   // ----------
@@ -308,11 +305,15 @@ $(function() {
       _.bindAll(this, "logIn", "signUp");
       this.render();
     },
+    
+      // Current Group Model
+  
 
     logIn: function(e) {
       var self = this;
       var username = this.$("#login-username").val();
       var password = this.$("#login-password").val();
+      var currentgroup = Parse.Object.extend("currentGroup");
       
       Parse.User.logIn(username, password, {
         success: function(user) {
