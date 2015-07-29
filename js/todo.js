@@ -7,8 +7,7 @@ $(function() {
   Parse.$ = jQuery;
 
   // Initialize Parse with your Parse application javascript keys
-  Parse.initialize("your-application-id",
-                   "your-javascript-key");
+  Parse.initialize("GiWJbenQVNy2yYg29ITHJm2AGenR0Op43e3PPPWu", "7GNf9dReJc6saJ9OJWKP2cLrVWIby7wSt3rcEpRL");
 
   // Todo Model
   // ----------
