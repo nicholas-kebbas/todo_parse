@@ -306,8 +306,8 @@ $(function() {
       this.render();
     },
     
-      // Current Group Model
-
+    // Current Group Model
+    var currentgroup = currentGroup.get("name"); 
 
     logIn: function(e) {
       var self = this;
