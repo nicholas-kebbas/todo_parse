@@ -306,7 +306,6 @@ $(function() {
       this.render();
     },
     
-    // Current Group Model
    
 
     logIn: function(e) {
