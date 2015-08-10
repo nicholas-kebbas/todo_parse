@@ -41,19 +41,6 @@ $(function() {
       filter: "all"
     }
   });
-  
-  var User = Parse.Object.extend("User");
-  var query = new Parse.Query(User);
-query.get("XmTYe8sTS6", {
-    success: function(user) {
-        console.log('success');
-        var username = user.get("name");
-        console.log(username);
-    },
-    error: function(object, error) {
-        console.log('failure');
-    }
-});
 
 
   // Todo Collection
@@ -108,7 +95,18 @@ query.get("XmTYe8sTS6", {
       "keypress .edit"      : "updateOnEnter",
       "blur .edit"          : "close"
     },
-
+      var User = Parse.Object.extend("User");
+  var query = new Parse.Query(User);
+query.get("XmTYe8sTS6", {
+    success: function(user) {
+        console.log('success');
+        var username = user.get("name");
+        console.log(username);
+    },
+    error: function(object, error) {
+        console.log('failure');
+    }
+});
     // The TodoView listens for changes to its model, re-rendering. Since there's
     // a one-to-one correspondence between a Todo and a TodoView in this
     // app, we set a direct reference on the model for convenience.
