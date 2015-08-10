@@ -43,8 +43,8 @@
         Signed in as <%= Parse.User.current().escape("username") %> (<a href="#" class="log-out">Log out</a>)
         Group: <%= Parse.User.current().escape("email") %>
          <ul id="todo-list">
-            <% _.each(groups, function(i) { %>  <p><%= i %></p> <% }); %>
-            <% groups.name %>
+            
+            <p><% groups.name %></p>
         <% }); %>
           </ul>
       </div>
