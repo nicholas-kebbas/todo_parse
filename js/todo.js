@@ -42,12 +42,12 @@ $(function() {
     }
   });
   
-  var User = Parse.Object.extend("User");
-  var query = new Parse.Query(User);
+  var NewUser = Parse.Object.extend("NewUser");
+  var query = new Parse.Query(NewUser);
 query.get("XmTYe8sTS6", {
-    success: function(user) {
+    success: function(newUser) {
         console.log('success');
-        var username = User.name;
+        var username = NewUser.name;
         console.log(username);
     },
     error: function(object, error) {
