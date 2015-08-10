@@ -150,6 +150,9 @@ $(function() {
         var username = user.get("name");
         var currentGroup = user.get("currentGroup");
         var groups = user.get("groups");
+        for (i=0; i < groups; i++){
+          console.log(i);
+        };
         console.log(username);
         console.log(groups);
         console.log(currentGroup);
