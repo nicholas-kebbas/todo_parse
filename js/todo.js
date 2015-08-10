@@ -213,53 +213,7 @@ $(function() {
     },
   
     
-      // The main view that lets a user manage their todo items
-  var ManageGroupsView = Parse.View.extend({
-
-    // Our template for the line of statistics at the bottom of the app.
-    statsTemplate: _.template($('#current-group-template').html()),
-
-    // Delegated events for creating new items, and clearing completed ones.
-    events: {
-      "keypress #new-todo":  "createOnEnter",
-      "click #clear-completed": "clearCompleted",
-      "click #toggle-all": "toggleAllComplete",
-      "click .log-out": "logOut",
-      "click ul#filters a": "selectFilter"
-    },
-
-    el: ".content",
-
-    // At initialization we bind to the relevant events on the `Todos`
-    // collection, when items are added or changed. Kick things off by
-    // loading any preexisting todos that might be saved to Parse.
-    initialize: function() {
-      var self = this;
-
-      _.bindAll(this, 'addOne', 'addAll', 'addSome', 'render', 'toggleAllComplete', 'logOut', 'createOnEnter');
-
-      // Main todo management template
-      this.$el.html(_.template($("#manage-todos-template").html()));
       
-      this.input = this.$("#new-todo");
-      this.allCheckbox = this.$("#toggle-all")[0];
-
-      // Create our collection of Todos
-      this.todos = new TodoList;
-
-      // Setup the query for the collection to look for todos from the current user
-      this.todos.query = new Parse.Query(Todo);
-      this.todos.query.equalTo("user", Parse.User.current());
-        
-      this.todos.bind('add',     this.addOne);
-      this.todos.bind('reset',   this.addAll);
-      this.todos.bind('all',     this.render);
-
-      // Fetch all the todo items for this user
-      this.todos.fetch();
-
-      state.on("change", this.filter, this);
-    },
 
     // Logs out the user and shows the login view
     logOut: function(e) {
