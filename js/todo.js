@@ -148,7 +148,7 @@ $(function() {
     success: function(user) {
         console.log('success');
         var username = user.get("name");
-        var currentGroup= user.get("currentGroup");
+        var currentGroup = user.get("currentGroup.id");
         var groups = user.get("groups");
         console.log(username);
         console.log(groups);
