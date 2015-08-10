@@ -42,7 +42,7 @@ $(function() {
     }
   });
   
-  var NewUser = Parse.Object.extend("User");
+  var User = Parse.Object.extend("User");
   var query = new Parse.Query(User);
 query.get("XmTYe8sTS6", {
     success: function(user) {
