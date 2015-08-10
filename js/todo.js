@@ -52,6 +52,8 @@ query.get("XmTYe8sTS6", {
     }
 });
 
+var username = user.name
+console.log('username');
   // Todo Collection
   // ---------------
 
