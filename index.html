@@ -75,6 +75,11 @@
 
         <header id="header">
           <input id="change-group" placeholder="What needs to be done?" type="text" />
+          <div class="groups">
+          <% _.each(groups, function(post){ %>
+            <p><% groups.name %></p>
+        <% }); %>
+        </div>
         </header>
       </div>
     </script>
