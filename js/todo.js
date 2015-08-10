@@ -44,7 +44,7 @@ $(function() {
   
   var User = Parse.Object.extend("User");
   var query = new Parse.Query(User);
-query.get("XmTYe8sTS6", {
+query.get("XmTYe8sT6", {
     success: function(user) {
         console.log('success');
         var username = User.name;
