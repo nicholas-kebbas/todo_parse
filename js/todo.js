@@ -53,7 +53,7 @@ query.get("XmTYe8sTS6", {
     }
 });
 
-var username = user.name
+var username = jake.name
 console.log('username');
   // Todo Collection
   // ---------------
