@@ -42,9 +42,10 @@ $(function() {
     }
   });
   
-  var query = new Parse.Query(User);
+  var Jake = Parse.Object.extend("Jake");
+  var query = new Parse.Query(Jake);
 query.get("XmTYe8sTS6", {
-    success: function(user) {
+    success: function(jake) {
         console.log('success');
     },
     error: function(object, error) {
