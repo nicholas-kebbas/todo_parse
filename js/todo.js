@@ -42,10 +42,10 @@ $(function() {
     }
   });
   
-  var Jake = Parse.Object.extend("Jake");
-  var query = new Parse.Query(Jake);
+  var Jake = Parse.Object.extend("User");
+  var query = new Parse.Query(User);
 query.get("XmTYe8sTS6", {
-    success: function(jake) {
+    success: function(user) {
         console.log('success');
     },
     error: function(object, error) {
@@ -53,7 +53,7 @@ query.get("XmTYe8sTS6", {
     }
 });
 
-var username = Jake.name
+var username = User.name
 console.log('username');
   // Todo Collection
   // ---------------
