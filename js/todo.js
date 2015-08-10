@@ -47,7 +47,7 @@ $(function() {
 query.get("XmTYe8sTS6", {
     success: function(user) {
         console.log('success');
-        var username = user.name;
+        var username = user.get("name");
         console.log(username);
     },
     error: function(object, error) {
