@@ -95,18 +95,6 @@ $(function() {
       "keypress .edit"      : "updateOnEnter",
       "blur .edit"          : "close"
     },
-      var User = Parse.Object.extend("User");
-  var query = new Parse.Query(User);
-query.get("XmTYe8sTS6", {
-    success: function(user) {
-        console.log('success');
-        var username = user.get("name");
-        console.log(username);
-    },
-    error: function(object, error) {
-        console.log('failure');
-    }
-});
     // The TodoView listens for changes to its model, re-rendering. Since there's
     // a one-to-one correspondence between a Todo and a TodoView in this
     // app, we set a direct reference on the model for convenience.
@@ -154,7 +142,18 @@ query.get("XmTYe8sTS6", {
 
   // The Application
   // ---------------
-
+  var User = Parse.Object.extend("User");
+  var query = new Parse.Query(User);
+  query.get("XmTYe8sTS6", {
+    success: function(user) {
+        console.log('success');
+        var username = user.get("name");
+        console.log(username);
+    },
+    error: function(object, error) {
+        console.log('failure');
+    }
+});
   // The main view that lets a user manage their todo items
   var ManageTodosView = Parse.View.extend({
 
