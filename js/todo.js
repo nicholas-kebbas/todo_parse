@@ -148,12 +148,15 @@ $(function() {
     success: function(user) {
         console.log('success');
         var username = user.get("name");
+        var groups = user.get("groups");
         console.log(username);
+        console.log(groups);
     },
     error: function(object, error) {
         console.log('failure');
     }
 });
+
   // The main view that lets a user manage their todo items
   var ManageTodosView = Parse.View.extend({
 
