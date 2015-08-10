@@ -154,7 +154,7 @@ $(function() {
         var groupslength = groups.length;
         for (i=0; i < groupslength; i++){
           console.log(groups[i]);
-        };
+        }
         console.log(username);
         console.log(groups);
         console.log(currentGroup);
@@ -164,7 +164,7 @@ $(function() {
     }
 });
 
-  // The main view that lets a user manage their todo items
+  // The main view that lets a user manage their groups
   var ManageTodosView = Parse.View.extend({
 
     // Our template for the line of statistics at the bottom of the app.
