@@ -41,6 +41,16 @@ $(function() {
       filter: "all"
     }
   });
+  
+  var query = new Parse.Query(User);
+query.get("XmTYe8sTS6", {
+    success: function(user) {
+        console.log('success');
+    },
+    error: function(object, error) {
+        console.log('failure');
+    }
+});
 
   // Todo Collection
   // ---------------
