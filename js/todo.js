@@ -148,9 +148,11 @@ $(function() {
     success: function(user) {
         console.log('success');
         var username = user.get("name");
+        var currentGroup= user.get("currentGroup");
         var groups = user.get("groups");
         console.log(username);
         console.log(groups);
+        console.log(currentGroup);
     },
     error: function(object, error) {
         console.log('failure');
