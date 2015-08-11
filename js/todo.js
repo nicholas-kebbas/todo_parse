@@ -159,10 +159,7 @@ $(function() {
         var groupslength = groups.length;
         for (i=0; i < groupslength; i++){
           console.log(groups[i]);
-        }
-        console.log(username);
-        console.log(groups);
-        console.log(currentGroup);
+        },
     },
     error: function(object, error) {
         console.log('fail');
@@ -176,7 +173,7 @@ var query = new Parse.Query(Group);
     query.find({
       success: function(usersGroups) {
         // userGroups contains all of the posts by the current user.
-      }
+      },
       error: function(object, error){
         console.log('fail');
       }
