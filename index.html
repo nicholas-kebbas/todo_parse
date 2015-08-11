@@ -44,8 +44,7 @@
         Group: <%= Parse.User.current().escape("email") %>
          <ul id="todo-list">
             
-            <p><%= Parse.User.groups %></p>
-            <%= console.log(Parse.User.groups) %>
+
           </ul>
       </div>
       
@@ -79,9 +78,6 @@
         <header id="header">
           <input id="change-group" placeholder="What needs to be done?" type="text" />
           <div class="groups">
-          <% _.each(groups, doSomeWorkOn){ %>
-            <% groups.name %>
-        <% }); %>
         </div>
         </header>
       </div>
