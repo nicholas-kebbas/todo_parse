@@ -416,7 +416,8 @@ $(function() {
     routes: {
       "all": "all",
       "active": "active",
-      "completed": "completed"
+      "completed": "completed",
+      "groups": "groups"
     },
 
     initialize: function(options) {
@@ -432,6 +433,9 @@ $(function() {
 
     completed: function() {
       state.set({ filter: "completed" });
+    }
+    groups: function() {
+      state.set({ filter: "groups" });
     }
   });
 
