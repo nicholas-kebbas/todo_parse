@@ -1,6 +1,4 @@
-// This demo uses Parse to persist
-// the todo items and provide user authentication and sessions.
-
+//Gon be the squirrel web app
 $(function() {
 
   Parse.$ = jQuery;
@@ -167,7 +165,7 @@ $(function() {
         console.log(currentGroup);
     },
     error: function(object, error) {
-        console.log('failure');
+        console.log('fail');
     }
 });
 
@@ -178,6 +176,9 @@ var query = new Parse.Query(Group);
     query.find({
       success: function(usersGroups) {
         // userGroups contains all of the posts by the current user.
+      }
+      error: function(object, error){
+        console.log('fail');
       }
     });
 
