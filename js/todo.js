@@ -152,7 +152,7 @@ $(function() {
     var identifier = 'failure';
   }
   console.log(identifier);
-  query.get("lywj1nkP6T", {
+  query.get(identifier, {
     success: function(user) {
         console.log('success');
         var username = user.get("name");
