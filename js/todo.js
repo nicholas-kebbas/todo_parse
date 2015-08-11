@@ -140,7 +140,7 @@ $(function() {
 
   });
 
-  // The Application
+  // The User Model
   // ---------------
   var User = Parse.Object.extend("User");
   var query = new Parse.Query(User);
@@ -170,6 +170,17 @@ $(function() {
         console.log('failure');
     }
 });
+
+//The Group Model
+var Group = Parse.Object.extend("Group");
+var query = new Parse.Query(Group);
+    query.equalTo("User", User);
+    query.find({
+      success: function(userGroups) {
+        // userGroups contains all of the posts by the current user.
+        console.log(userGroups);
+      }
+    });
 
 // The main view that lets a user manage their groups
   var ManageTodosView = Parse.View.extend({
