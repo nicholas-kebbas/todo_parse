@@ -146,7 +146,7 @@ $(function() {
   var query = new Parse.Query(User);
   var current = Parse.User.current();
   if (Parse.User.current()) {
-  var identifier = current.objectId;
+  var identifier = User.get("objectId");
   }
   query.get("lywj1nkP6T", {
     success: function(user) {
