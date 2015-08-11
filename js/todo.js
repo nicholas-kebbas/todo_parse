@@ -176,9 +176,9 @@ var Group = Parse.Object.extend("Group");
 var query = new Parse.Query(Group);
     query.equalTo("User", User);
     query.find({
-      success: function(userGroups) {
+      success: function(usersGroups) {
         // userGroups contains all of the posts by the current user.
-        console.log(userGroups);
+        console.log(usersGroups);
       }
     });
 
