@@ -433,7 +433,7 @@ $(function() {
 
     completed: function() {
       state.set({ filter: "completed" });
-    }
+    },
     groups: function() {
       state.set({ filter: "groups" });
     }
