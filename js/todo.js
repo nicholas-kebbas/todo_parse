@@ -146,8 +146,9 @@ $(function() {
   var query = new Parse.Query(User);
   var current = Parse.User.current();
   if (Parse.User.current()) {
-  var identifier = Parse.User.current().get("objectId");
+  var identifier = Parse.User.current().escape("objectId");
   }
+  console.log(identifier);
   query.get("lywj1nkP6T", {
     success: function(user) {
         console.log('success');
@@ -161,7 +162,6 @@ $(function() {
         console.log(username);
         console.log(groups);
         console.log(currentGroup);
-        console.log(identifier);
     },
     error: function(object, error) {
         console.log('failure');
