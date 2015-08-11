@@ -146,7 +146,7 @@ $(function() {
   var query = new Parse.Query(User);
   var current = Parse.User.current();
   if (Parse.User.current()) {
-    var identifier = 'success';
+    var identifier = Parse.User.current(objectId);
   }
   else {
     var identifier = 'failure';
