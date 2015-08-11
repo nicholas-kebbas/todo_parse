@@ -180,6 +180,28 @@ $(function() {
     },
 
     el: ".content",
+    
+     var User = Parse.Object.extend("User");
+  var query = new Parse.Query(User);
+  var current = Parse.User.current();
+  query.get("lywj1nkP6T", {
+    success: function(user) {
+        console.log('success');
+        var username = user.get("name");
+        var currentGroup = user.get("currentGroup");
+        var groups = user.get("groups");
+        var groupslength = groups.length;
+        for (i=0; i < groupslength; i++){
+          console.log(groups[i]);
+        }
+        console.log(username);
+        console.log(groups);
+        console.log(currentGroup);
+    },
+    error: function(object, error) {
+        console.log('failure');
+    }
+});
 
     // At initialization we bind to the relevant events on the `Todos`
     // collection, when items are added or changed. Kick things off by
