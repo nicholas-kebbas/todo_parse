@@ -178,7 +178,6 @@ var query = new Parse.Query(Group);
     query.find({
       success: function(usersGroups) {
         // userGroups contains all of the posts by the current user.
-        console.log(usersGroups);
       }
     });
 
