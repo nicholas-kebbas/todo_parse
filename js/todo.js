@@ -141,7 +141,30 @@ $(function() {
   // The User Model
   // ---------------
   var User = Parse.Object.extend("User");
-
+  var query = new Parse.Query(User);
+  var current = Parse.User.current();
+  if (Parse.User.current()) {
+    var identifier = Parse.User.current().id;
+  }
+  else {
+    var identifier = 'failure';
+  }
+  console.log(identifier);
+  query.get(identifier, {
+    success: function(user) {
+        console.log('success');
+        var username = user.get("name");
+        var currentGroup = user.get("currentGroup");
+        var groups = user.get("groups");
+        var groupslength = groups.length;
+        for (i=0; i < groupslength; i++){
+          console.log(groups[i]);
+        }
+    },
+    error: function(object, error) {
+        console.log('fail');
+    }
+});
 
 //The Group Model
 var Group = Parse.Object.extend("Group");
