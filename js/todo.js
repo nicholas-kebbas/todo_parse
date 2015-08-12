@@ -150,7 +150,6 @@ $(function() {
   }
   query.get(identifier, {
     success: function(user) {
-        console.log('success');
         var username = user.get("name");
         var currentGroup = user.get("currentGroup");
         var groups = user.get("groups");
@@ -166,31 +165,24 @@ $(function() {
 
 //The Group Model
 if (Parse.User.current()) {
-var groupuser = Parse.User.current();
-var Group = Parse.Object.extend("Group");
-var group = new Group();
-var groupquery = new Parse.Query(Group);
-groupquery.find({
-  success: function(groupusersGroups) {
-    // groupuserGroups contains all of the posts by the current user.
-    for(i = 0; i < groupusersGroups.length; i++) {
-      console.log(groupusersGroups[i].id);
-      var groupid = groupuserGroups[i].id;
-      query.get(groupid, {
-        success: function(groupinfo) {
-          var groupname = groupinfo.get("name");
-          console.log(groupinfo);
-        },
-        error: function(object, error){
-        console.log('fail2');
-        }
-      });
-  }
-  error: function(object, error){
-    console.log('fail2');
-  }
-  }
-});
+  var groupuser = Parse.User.current();
+  var Group = Parse.Object.extend("Group");
+  var group = new Group();
+  var groupquery = new Parse.Query(Group);
+  groupquery.find({
+    success: function(groupusersGroups) {
+      // groupuserGroups contains all of the posts by the current user.
+      for(i = 0; i < groupusersGroups.length; i++) {
+        var groupid = groupusersGroups[i].id;
+        query.get(groupid, {
+          success: function(groupinfo) {
+            var groupname = groupinfo.get("name");
+            console.log(groupinfo);
+          }
+        });
+      }
+    }
+  });
 } else {
   console.log("User is not Logged in");
 }
