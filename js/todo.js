@@ -167,17 +167,24 @@ $(function() {
 });
 
 //The Group Model
+var groupuser = Parse.User.current();
 var Group = Parse.Object.extend("Group");
-var query = new Parse.Query(Group);
-    query.equalTo("User", User);
+var group = new Group();
+group.set("users", groupuser);
+group.save(null, {
+  success: function(group) {
+    var query = new Parse.Query(Group);
+    query.equalTo("Users", groupuser);
     query.find({
-      success: function(usersGroups) {
+      success: function(groupusersGroups) {
         // userGroups contains all of the posts by the current user.
       },
       error: function(object, error){
         console.log('fail');
       }
     });
+  }
+});
 
 // The main view that lets a user manage their groups
   var ManageTodosView = Parse.View.extend({
