@@ -174,7 +174,8 @@ var group = new Group();
     groupquery.equalTo("Users", groupuser);
     groupquery.find({
       success: function(groupusersGroups) {
-        // userGroups contains all of the posts by the current user.
+        // groupuserGroups contains all of the posts by the current user.
+        console.log(groupusersGroups);
       },
       error: function(object, error){
         console.log('fail');
