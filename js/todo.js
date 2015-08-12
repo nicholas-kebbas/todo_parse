@@ -175,8 +175,9 @@ if (Parse.User.current()) {
       console.log("hello2");
       // groupuserGroups contains all of the posts by the current user.
       for(i = 0; i < groupusersGroups.length; i++) {
-        console.log("hello3");
+        
         var groupid = groupusersGroups[i].id;
+        console.log(groupid);
         query.get(groupid, {
           success: function(groupinfo) {
             var groupname = groupinfo.get("name");
