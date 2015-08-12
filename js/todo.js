@@ -180,10 +180,15 @@ groupquery.find({
         success: function(groupinfo) {
           var groupname = groupinfo.get("name");
           console.log(groupinfo);
-    }
-  },
+        },
+        error: function(object, error){
+        console.log('fail2');
+        }
+      });
+  }
   error: function(object, error){
     console.log('fail2');
+  }
   }
 });
 } else {
