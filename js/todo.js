@@ -142,7 +142,6 @@ $(function() {
   // ---------------
   var User = Parse.Object.extend("User");
   var query = new Parse.Query(User);
-  var current = Parse.User.current();
   if (Parse.User.current()) {
     var identifier = Parse.User.current().id;
   }
@@ -162,7 +161,7 @@ $(function() {
         }
     },
     error: function(object, error) {
-        console.log('fail');
+        console.log('fail1');
     }
 });
 
@@ -178,10 +177,9 @@ var group = new Group();
         for(i = 0; i < groupusersGroups.length; i++) {
           console.log(groupusersGroups[i].id);
         }
-        console.log(groupusersGroups);
       },
       error: function(object, error){
-        console.log('fail');
+        console.log('fail2');
       }
     });
 
