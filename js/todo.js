@@ -148,7 +148,6 @@ $(function() {
   else {
     var identifier = 'failure';
   }
-  console.log(identifier);
   query.get(identifier, {
     success: function(user) {
         console.log('success');
@@ -176,6 +175,11 @@ groupquery.find({
     // groupuserGroups contains all of the posts by the current user.
     for(i = 0; i < groupusersGroups.length; i++) {
       console.log(groupusersGroups[i].id);
+      var groupid = groupuserGroups[i].id;
+      query.get(groupid, {
+        success: function(groupinfo) {
+          var groupname = groupinfo.get("name");
+          console.log(groupinfo);
     }
   },
   error: function(object, error){
@@ -185,6 +189,8 @@ groupquery.find({
 } else {
   console.log("User is not Logged in");
 }
+
+//end group model
 
 // The main view that lets a user manage their groups
   var ManageTodosView = Parse.View.extend({
