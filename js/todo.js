@@ -175,6 +175,9 @@ var group = new Group();
     groupquery.find({
       success: function(groupusersGroups) {
         // groupuserGroups contains all of the posts by the current user.
+        for(i = 0; i < groupusersGroups.length; i++) {
+          console.log(groupusersGroups[i].id);
+        }
         console.log(groupusersGroups);
       },
       error: function(object, error){
