@@ -181,7 +181,7 @@ if (Parse.User.current()) {
         groupquery.get(groupid, {
           success: function(groupinfo) {
             var groupname = groupinfo.get("name");
-            console.log(groupinfo);
+            console.log(groupname);
           }
         });
       }
