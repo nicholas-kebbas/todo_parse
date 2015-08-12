@@ -171,7 +171,6 @@ var groupuser = Parse.User.current();
 var Group = Parse.Object.extend("Group");
 var group = new Group();
 var groupquery = new Parse.Query(Group);
-groupquery.containedIn(groupuser,"Users");
 groupquery.find({
   success: function(groupusersGroups) {
     // groupuserGroups contains all of the posts by the current user.
