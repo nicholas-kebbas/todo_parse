@@ -159,7 +159,7 @@ $(function() {
         var groupslength = groups.length;
         for (i=0; i < groupslength; i++){
           console.log(groups[i]);
-        },
+        }
     },
     error: function(object, error) {
         console.log('fail');
