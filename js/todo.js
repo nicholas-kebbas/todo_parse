@@ -177,7 +177,7 @@ if (Parse.User.current()) {
       for(i = 0; i < groupusersGroups.length; i++) {
         var groupid = groupusersGroups[i].id;
         console.log(groupid);
-      //query through group to get more group information
+      //query through group to get squirrels and name of group
         groupquery.get(groupid, {
           success: function(groupinfo) {
             var groupname = groupinfo.get("name");
@@ -194,6 +194,9 @@ if (Parse.User.current()) {
 }
 
 //end group model
+
+//the squirrel model
+// end squirrel model
 
 // The main view that lets a user manage their groups
   var ManageTodosView = Parse.View.extend({
