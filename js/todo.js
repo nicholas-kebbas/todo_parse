@@ -37,11 +37,10 @@ if (Parse.User.current()) {
   var Group = Parse.Object.extend("Group");
   var group = new Group();
   var groupquery = new Parse.Query(Group);
-  console.log("hello");
   groupquery.find({
     success: function(groupusersGroups) {
       console.log("hello2");
-      // groupuserGroups contains all of the posts by the current user.
+      // groupuserGroups contains all of groups of the current user.
       for(i = 0; i < groupusersGroups.length; i++) {
         var groupid = groupusersGroups[i].id;
         console.log(groupid);
@@ -60,6 +59,37 @@ if (Parse.User.current()) {
 } else {
   console.log("User is not Logged in");
 }
+
+//Model for Squirrels 
+//The Group Model
+if (Parse.User.current()) {
+  var groupuser = Parse.User.current();
+  var Group = Parse.Object.extend("Group");
+  var group = new Group();
+  var groupquery = new Parse.Query(Group);
+  groupquery.find({
+    success: function(groupusersGroups) {
+      console.log("hello2");
+      // groupuserGroups contains all of groups of the current user.
+      for(i = 0; i < groupusersGroups.length; i++) {
+        var groupid = groupusersGroups[i].id;
+        console.log(groupid);
+      //query through group to get squirrels and name of group
+        groupquery.get(groupid, {
+          success: function(groupinfo) {
+            var groupname = groupinfo.get("name");
+            var groupsquirrels = groupinfo.get("squirrels");
+            console.log(groupsquirrels);
+            console.log(groupname);
+          }
+        });
+      }
+    }
+  });
+} else {
+  console.log("User is not Logged in");
+}
+//
 // The main view that lets a user manage their groups
   var ManageTodosView = Parse.View.extend({
 
