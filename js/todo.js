@@ -60,12 +60,6 @@ if (Parse.User.current()) {
 } else {
   console.log("User is not Logged in");
 }
-
-//end group model
-
-//the squirrel model
-// end squirrel model
-
 // The main view that lets a user manage their groups
   var ManageTodosView = Parse.View.extend({
 
