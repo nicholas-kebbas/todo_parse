@@ -334,7 +334,6 @@ if (Parse.User.current()) {
     }
   });
 
-  var state = new AppState;
 
   new AppRouter;
   new AppView;
